@@ -6,12 +6,16 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
+ * This is a scene of a skydiver soon after beginning his decent out of the
+ * of the plane
+ * 
  * @author Ryan Rutishasuer
  * @version 2022-01-26
  */
 public class Picture
 {
     private Square wall;
+    private Square plane;
     private Square window;
     private Square door;
     private Triangle hood;
@@ -110,12 +114,11 @@ public class Picture
         wall.changeColor("white");
         window.changeColor("black");
         plane.changeColor("black");
-        door.changeColor("white");
         hood.changeColor("black");
         hood2.changeColor("black");
         door.changeColor("white");
         parachute.changeColor("black");
-        parachute.changeColor("black");
+        parachute2.changeColor("black");
         diver.changeColor("black");
     }
 
