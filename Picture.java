@@ -13,8 +13,12 @@ public class Picture
 {
     private Square wall;
     private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square door;
+    private Triangle hood;
+    private Triangle hood2;
+    private Circle parachute;
+    private Triangle parachute2;
+    private Person diver;
     private boolean drawn;
 
     /**
@@ -23,9 +27,14 @@ public class Picture
     public Picture()
     {
         wall = new Square();
+        plane = new Square();
         window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        door = new Square();
+        hood = new Triangle();
+        hood2 = new Triangle();
+        parachute = new Circle();
+        parachute2 = new Triangle();
+        diver = new Person();
         drawn = false;
     }
 
@@ -35,27 +44,60 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
+            wall.changeColor("blue");
+            wall.moveHorizontal(-1400);
+            wall.moveVertical(-200);
+            wall.changeSize(12000);
             wall.makeVisible();
             
             window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
+            window.moveHorizontal(-200);
+            window.moveVertical(-50);
+            window.changeSize(120);
             window.makeVisible();
+            
+            plane.changeColor("black");
+            plane.moveHorizontal(-320);
+            plane.moveVertical(-50);
+            plane.changeSize(120);
+            plane.makeVisible();
+            
+            parachute.changeColor("yellow");
+            parachute.moveHorizontal(-90);
+            parachute.moveVertical(110);
+            parachute.changeSize(40);
+            parachute.makeVisible();
+            
+            parachute2.changeColor("green");
+            parachute2.changeSize(-30, 60);
+            parachute2.moveHorizontal(-50);
+            parachute2.moveVertical(100);
+            parachute2.makeVisible();
+            
+            diver.changeColor("magenta");
+            diver.moveHorizontal(-120);
+            diver.moveVertical(40);
+            diver.changeSize(-60, 40);
+            diver.makeVisible();
     
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
+            hood.changeColor("black");
+            hood.changeSize(60, 180);
+            hood.moveHorizontal(20);
+            hood.moveVertical(-70);
+            hood.makeVisible();
+            
+            hood2.changeColor("black");
+            hood2.changeSize(-60, 180);
+            hood2.moveHorizontal(20);
+            hood2.moveVertical(50);
+            hood2.makeVisible();
+            
+            door.changeColor("blue");
+            door.moveHorizontal(-200);
+            door.moveVertical(-40);
+            door.changeSize(100);
+            door.makeVisible();
     
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
             drawn = true;
         }
     }
@@ -65,10 +107,16 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        wall.changeColor("white");
+        window.changeColor("black");
+        plane.changeColor("black");
+        door.changeColor("white");
+        hood.changeColor("black");
+        hood2.changeColor("black");
+        door.changeColor("white");
+        parachute.changeColor("black");
+        parachute.changeColor("black");
+        diver.changeColor("black");
     }
 
     /**
@@ -76,9 +124,14 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
+        wall.changeColor("blue");
         window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+        plane.changeColor("black");
+        hood.changeColor("black");
+        hood2.changeColor("black");
+        door.changeColor("blue");
+        parachute.changeColor("yellow");
+        parachute2.changeColor("green");
+        diver.changeColor("magenta");
     }
 }
